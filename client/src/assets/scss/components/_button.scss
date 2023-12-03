@@ -1,0 +1,81 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-width: 0;
+  border-radius: 0.4rem;
+  outline-color: transparent;
+  cursor: pointer;
+
+  color: white;
+  font-size: 1.7rem;
+
+  &:focus {
+    outline: 2px solid var(--current-color);
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+  &.inline {
+    display: inline-flex;
+  }
+  &-primary {
+    color: $primary-color;
+    --current-color: var(--primary-color);
+  }
+  &-secondary {
+    color: $secondary-color;
+    --current-color: var(--secondary-color);
+  }
+  &-danger {
+    color: var(--danger-color);
+    --current-color: var(--danger-color);
+  }
+  &-outline {
+    background-color: transparent;
+    border: 0.2rem solid currentColor;
+    transition: all 0.2s linear;
+    &:hover {
+      color: white;
+      background-color: var(--current-color);
+    }
+  }
+  &-solid {
+    color: white !important;
+    background-color: var(--current-color);
+  }
+  &-link {
+    background-color: transparent;
+    // border-bottom: 0.2rem solid currentColor;
+    text-decoration: underline;
+    border-radius: 0;
+  }
+  &-xl {
+    @include button(3em, 2.5em);
+  }
+  &-lg {
+    @include button(2.8em, 1.8em);
+    font-size: clamp(1.6rem, 0.7vw + 0.8rem, 1.8rem);
+  }
+  &-md {
+    @include button(4.5rem, 2.4rem);
+  }
+  &-sm {
+    @include button(4rem, 1.2rem);
+    font-size: 1.4rem;
+  }
+  &-xs {
+    @include button(3rem, 1.8rem);
+    font-size: 1.2rem;
+  }
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}

@@ -1,0 +1,65 @@
+@use './breakpoints' as *;
+
+:root {
+  // Color
+  --primary-color: #fb2e86;
+  --secondary-color: #151875;
+  --secondary-color: #0b0c35;
+  --success-color: #20e392;
+  --warning-color: #ffc12d;
+  --danger-color: #e0144c;
+  --light-color: #fffaff;
+
+  --heading-color: var(--secondary-color);
+  --text-color: #5a5f69;
+  --product-bgc: #f6f7fb;
+  --border-color: #eee;
+
+  // Spacing
+  --container-width: calc(118rem + calc(4 * var(--gutter)));
+  --section-spacing: clamp(6.4rem, 10vw, 12.8rem);
+  --nav-top-height: 4rem;
+  --nav-bottom-height: 7rem;
+  @include lg {
+    --nav-top-height: 0rem;
+    --nav-bottom-height: 5rem;
+  }
+  --header-height: calc(var(--nav-bottom-height) + var(--nav-top-height));
+
+  // Font-face
+  --primary-font: 'Nunito', sans-serif;
+  --secondary-font: 'Lato', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+  --josenfin-sans: 'Josefin Sans', sans-serif;
+
+  // Table
+  --table-cell-padding: 0.8rem;
+  --table-border-width: 0.1rem;
+  --table-border-color: var(--border-color);
+}
+
+// Color
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$violet-color: #7e33e0;
+$main-header-bgc: var(--light-color);
+$banner-bgc: #f2f0ff;
+$section-hover-color: #2f1ac4;
+$product-bgc-1: var(--product-bgc);
+$product-bgc-2: #f5f6f8;
+$shade-bgc: #eeeffb;
+$footer-bgc: #e7e4f8;
+$banner-stick-bgc: #f2edf4;
+
+$banner-stick-color: #4f245e;
+$banner-stick-color: #5f306f;
+$heading-color: var(--heading-color);
+$text-color: var(--text-color);
+$footer-bottom-text: #9da0ae;
+
+// @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+// Fonts
+$primary-font: 'Josefin Sans', sans-serif;
+$primary-font: 'Nunito', sans-serif;
+$secondary-font: 'Lato', sans-serif;

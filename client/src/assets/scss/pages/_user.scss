@@ -1,0 +1,20 @@
+.user {
+  &-sidebar {
+    &__item > a,
+    &__item button {
+      --gutter: 2rem;
+      --current-color: var(--heading-color);
+
+      border-radius: 0.8rem;
+      justify-content: start;
+
+      color: var(--heading-color);
+    }
+  }
+  &-profile {
+    &-form {
+      --current-color: var(--heading-color);
+      margin-right: clamp(0px, 20vw - 16rem, 16rem);
+    }
+  }
+}

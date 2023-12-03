@@ -1,0 +1,72 @@
+/*=========
+*  Spacing
+==========*/
+
+$spaceTypes: (
+  'p': 'padding',
+  'm': 'margin',
+);
+
+$orientations: (
+  '': '',
+  'l': '-left',
+  'r': '-right',
+  't': '-top',
+  'b': '-bottom',
+  'x': '-inline',
+  'y': '-block',
+);
+
+@for $i from 0 through 20 {
+  @each $sChar, $type in $spaceTypes {
+    @each $oChar, $orientation in $orientations {
+      .#{$sChar}#{$oChar}-#{$i} {
+        #{$type}#{$orientation}: $i * 0.4rem;
+      }
+    }
+  }
+}
+
+@each $oChar, $orientation in $orientations {
+  .m#{$oChar}-auto {
+    margin#{$orientation}: auto;
+  }
+}
+// .mx-auto {
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+// .ml-auto {
+//   margin-left: auto;
+// }
+
+/*===============
+*  width & height
+================*/
+
+@for $i from 0 to 11 {
+  .w-#{$i*10} {
+    width: $i * 10%;
+  }
+}
+
+.h-100 {
+  height: 100%;
+}
+
+/*===============
+*  flex
+================*/
+
+.flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
