@@ -1,13 +1,28 @@
-<script setup></script>
+<script setup>
+defineProps({
+  title: String,
+  caption: String,
+  desc: String,
+  imgSrc: String,
+  btnText: {
+    type: String,
+    default: 'view all products'
+  },
+  alt: {
+    type: String,
+    default: 'Furniture'
+  }
+})
+</script>
 <template>
-  mixin bannerStick(title, caption, desc, imgSrc, btnText= "view all products", alt= "Furniture")
   <section class="banner-stick container">
     <div class="banner-stick__content font-primary obs-transition fade">
-      h3.banner-stick__title= title p.banner-stick__caption= caption
-      p.banner-stick__desc.font-secondary= desc a(href=
-      POPLink).banner-stick__cta.btn.btn-md.btn-solid.btn-primary= btnText .banner-stick__img
+      <h3 class="banner-stick__title">{{ title }}</h3>
+      <p class="banner-stick__caption">{{ caption }}</p>
+      <p class="banner-stick__desc font-secondary">{{ desc }}</p>
+      <a href="poplink" class="banner-stick__cta btn btn-md btn-solid btn-primary">{{ btnText }}</a>
     </div>
     <div class="banner-stick__img"></div>
-    <img src="imgSrc" loading="lazy" alt="alt" />
+    <img :src="imgSrc" loading="lazy" :alt="alt" />
   </section>
 </template>
